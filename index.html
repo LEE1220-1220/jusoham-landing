@@ -151,6 +151,39 @@
   .faq .ans{padding:0 22px 22px;color:#4f3c46;font-size:15.5px}
   .faq .ans p{margin-bottom:10px}
   .faq .ans p:last-child{margin-bottom:0}
+
+  /* ── 목차 ── */
+  .toc{background:var(--p50);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin:30px 0 8px}
+  .toc b{display:block;font-family:'Jua',sans-serif;font-size:17px;margin-bottom:12px;color:var(--p700)}
+  .toc a{display:block;padding:6px 0 6px 20px;position:relative;color:#4f3c46;font-size:15.5px;font-weight:600}
+  .toc a::before{content:"→";position:absolute;left:0;color:var(--p400)}
+  .toc a:hover{color:var(--p600)}
+
+  /* ── 그룹 카드 ── */
+  .toclist{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0 34px}
+  .toclist a{background:#fff;border:1.5px solid var(--p200);border-radius:999px;padding:9px 16px;font-size:14.5px;font-weight:700;color:var(--p700)}
+  .toclist a:hover{background:var(--p100)}
+  .gcard{border:1px solid var(--line);border-radius:20px;padding:26px 24px;margin-bottom:16px;background:var(--p50)}
+  .gcard h3{margin:0 0 12px;border:0;padding:0;font-size:clamp(19px,2.4vw,23px);display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+  .gcard h3 .ge{font-size:24px}
+  .gcard h3 em{font-family:'Noto Sans KR',sans-serif;font-style:normal;font-size:13px;font-weight:600;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+  .gcard p{font-size:15.5px;margin-bottom:14px}
+  .gcard .catbox{margin:0}
+  .catbox span em{font-style:normal;color:var(--p400);font-size:12px;margin-left:4px}
+
+  /* ── 비교표 ── */
+  .tablewrap{overflow-x:auto;margin:18px 0 20px;-webkit-overflow-scrolling:touch}
+  .article table{width:100%;min-width:520px;border-collapse:collapse;font-size:15px;background:#fff;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm)}
+  .article th{background:linear-gradient(135deg,var(--p500),var(--p700));color:#fff;font-family:'Jua',sans-serif;font-weight:400;padding:14px 16px;text-align:left;font-size:16px}
+  .article td{padding:14px 16px;border-top:1px solid var(--line);color:#4f3c46;vertical-align:top}
+  .article tbody tr:nth-child(even){background:var(--p50)}
+
+  /* ── 용어사전 ── */
+  .glossary{margin:8px 0 20px}
+  .glossary dt{font-family:'Jua',sans-serif;font-size:17px;color:var(--p700);margin-top:16px}
+  .glossary dd{margin:5px 0 0;padding-left:14px;border-left:3px solid var(--p200);color:#4f3c46;font-size:15.5px}
+  .tip .upd{margin-top:12px;font-size:13px;color:var(--muted)}
+  @media(max-width:640px){.gcard{padding:20px 17px}.toc{padding:18px 18px}}
 </style>
 </head>
 <body>
@@ -281,129 +314,299 @@
       분야를 먼저 고르고 목록에서 원하는 서비스를 확인하면 되기 때문에,
       검색어를 이리저리 바꿔 가며 찾을 필요가 없습니다.</p>
 
-      <h3>이렇게 쓰면 편해요</h3>
-      <ul>
-        <li><b>분야부터 좁히기</b> — 사이트 이름이 기억나지 않아도 괜찮습니다. "쇼핑", "금융"처럼 분야만 알면 목록에서 눈으로 찾을 수 있습니다.</li>
-        <li><b>비슷한 서비스 비교하기</b> — 같은 카테고리 안에 여러 서비스가 나란히 있어, 무엇을 쓸지 고를 때 한눈에 견줘 볼 수 있습니다.</li>
-        <li><b>새로운 사이트 발견하기</b> — 늘 쓰던 곳 말고도 같은 분야에 어떤 서비스가 있는지 훑어보다 보면 몰랐던 곳을 만나게 됩니다.</li>
-        <li><b>즐겨찾기 대신 쓰기</b> — 주소함 한 곳만 북마크해 두면 기기가 바뀌어도 늘 쓰던 목록 그대로 이어서 쓸 수 있습니다.</li>
-      </ul>
-
-      <h3>이런 분들께 특히 잘 맞습니다</h3>
-      <ul>
-        <li>여러 사이트를 오가며 쓰는데 매번 검색하기가 번거로운 분</li>
-        <li>공식 홈페이지가 어느 것인지 헷갈렸던 경험이 있는 분</li>
-        <li>한 분야의 서비스를 여러 개 비교해 보고 싶은 분</li>
-        <li>휴대폰과 PC에서 같은 목록을 쓰고 싶은 분</li>
-        <li>인터넷이 아직 익숙하지 않아 주소 입력이 부담스러운 분</li>
-      </ul>
-
-      <h3>주소함에서 볼 수 있는 84개 카테고리</h3>
-      <p>아래 분야별로 사이트가 정리되어 있습니다. 관심 있는 분야를 골라 들어가 보세요.</p>
-      <div class="catbox">
-        <span>포털·검색</span>
-        <span>동영상·OTT</span>
-        <span>커뮤니티·SNS</span>
-        <span>쇼핑</span>
-        <span>뉴스·미디어</span>
-        <span>금융·은행</span>
-        <span>AI·챗봇</span>
-        <span>지도·교통</span>
-        <span>배달·음식</span>
-        <span>여행·숙박</span>
-        <span>게임</span>
-        <span>음악·오디오</span>
-        <span>웹툰·만화</span>
-        <span>부동산</span>
-        <span>중고거래·리셀</span>
-        <span>교육·학습</span>
-        <span>채용·이직</span>
-        <span>정부·공공</span>
-        <span>스포츠</span>
-        <span>날씨·환경</span>
-        <span>패션·뷰티</span>
-        <span>헬스·병원·의료</span>
-        <span>자동차</span>
-        <span>주식·투자·코인</span>
-        <span>클라우드·업무도구</span>
-        <span>개발·IT·도구</span>
-        <span>디자인·창작</span>
-        <span>도서·전자책</span>
-        <span>육아·유아</span>
-        <span>반려동물</span>
-        <span>취미·아웃도어</span>
-        <span>생활편의·서비스</span>
-        <span>통신·모바일</span>
-        <span>보험·대출</span>
-        <span>법률·세무</span>
-        <span>이메일·메신저</span>
-        <span>번역·사전·언어</span>
-        <span>영화·평점·예매</span>
-        <span>공연·전시·티켓</span>
-        <span>K-POP·연예·팬덤</span>
-        <span>요리·레시피·집밥</span>
-        <span>인테리어·가구·홈데코</span>
-        <span>가전·전자제품</span>
-        <span>명품·프리미엄</span>
-        <span>자격증·공무원시험</span>
-        <span>꽃·선물·기프트</span>
-        <span>결혼·웨딩</span>
-        <span>다이어트·홈트·운동</span>
-        <span>사진·영상편집</span>
-        <span>소셜커머스·핫딜·쿠폰</span>
-        <span>온라인툴·유틸리티</span>
-        <span>주류·와인·전통주</span>
-        <span>종교·신앙</span>
-        <span>과학·교양·지식</span>
-        <span>심리·마음건강</span>
-        <span>대학·입시·수능</span>
-        <span>유학·이민·비자</span>
-        <span>항공·마일리지·공항</span>
-        <span>전기차·충전</span>
-        <span>오토바이·바이크</span>
-        <span>낚시·조행</span>
-        <span>등산·트레킹·백패킹</span>
-        <span>자전거·라이딩</span>
-        <span>골프</span>
-        <span>커피·원두·홈카페</span>
-        <span>베이커리·베이킹·디저트</span>
-        <span>가드닝·반려식물</span>
-        <span>뷰티·헤어·네일</span>
-        <span>피부·성형·미용의료</span>
-        <span>안경·콘택트렌즈</span>
-        <span>영양제·건강기능식품</span>
-        <span>문구·오피스·사무용품</span>
-        <span>인쇄·굿즈·명함제작</span>
-        <span>피규어·프라모델·완구</span>
-        <span>보드게임·퍼즐</span>
-        <span>논문·학술자료</span>
-        <span>공공데이터·통계</span>
-        <span>도메인·호스팅</span>
-        <span>보안·백신</span>
-        <span>마케팅·SEO</span>
-        <span>창업·스타트업</span>
-        <span>프리랜서·외주</span>
-        <span>문서·PDF</span>
-        <span>해외직구·배송대행</span>
+      <div class="toc">
+        <b>이 페이지에서 다루는 내용</b>
+        <a href="#c-what">링크모음이란 무엇인가</a>
+        <a href="#c-diff">검색·즐겨찾기와 무엇이 다른가</a>
+        <a href="#c-groups">84개 카테고리 전체 안내</a>
+        <a href="#c-case">상황별 활용 방법</a>
+        <a href="#c-change">주소가 바뀌는 이유</a>
+        <a href="#c-safe">안전하게 이용하기</a>
+        <a href="#c-word">알아 두면 좋은 용어</a>
+        <a href="#faq">자주 묻는 질문</a>
       </div>
 
-      <h3>링크모음을 안전하게 이용하는 방법</h3>
+      <h3 id="c-what">링크모음이란 무엇인가요?</h3>
+      <p><b>링크모음</b>은 여러 웹사이트로 가는 길을 주제별로 정리해 한 화면에 펼쳐 놓은 페이지를 말합니다.
+      <b>사이트모음</b>, <b>주소모음</b>이라고 부르기도 합니다.
+      링크를 아무렇게나 나열하는 것과는 다릅니다. 핵심은 <b>분류</b>에 있습니다.
+      쇼핑은 쇼핑끼리, 금융은 금융끼리 묶여 있어야 "이 분야에는 이런 서비스들이 있구나" 하고 한눈에 파악됩니다.</p>
+      <p>인터넷 초창기에는 이런 형태의 디렉터리가 웹을 여행하는 기본 수단이었습니다.
+      이후 검색엔진이 발전하면서 잠시 뒤로 물러났지만, 서비스 수가 폭발적으로 늘어난 지금
+      오히려 다시 쓸모가 커졌습니다. 선택지가 너무 많아지면 <b>검색보다 목록이 빠른</b> 순간이 생기기 때문입니다.</p>
+
+      <h3 id="c-diff">검색엔진·즐겨찾기와 무엇이 다른가요?</h3>
+      <p>셋은 경쟁 관계가 아니라 쓰임새가 다릅니다. 상황에 맞게 골라 쓰면 됩니다.</p>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th>구분</th><th>가장 잘하는 일</th><th>아쉬운 점</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>검색엔진</b></td>
+              <td>찾을 대상의 이름을 정확히 알 때 가장 빠름</td>
+              <td>이름이 헷갈리면 비슷한 결과가 섞여 공식 사이트를 고르기 어려움</td>
+            </tr>
+            <tr>
+              <td><b>즐겨찾기</b></td>
+              <td>이미 아는 사이트를 반복해 열 때 편함</td>
+              <td>기기·브라우저마다 따로 관리해야 하고, 새 사이트는 발견할 수 없음</td>
+            </tr>
+            <tr>
+              <td><b>링크모음</b></td>
+              <td>이름을 몰라도 분야만 알면 찾을 수 있고, 비슷한 서비스를 나란히 비교 가능</td>
+              <td>모든 사이트를 담을 수는 없어 목록에 없는 곳도 있음</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>정리하면 이렇습니다. <b>이름을 알 때는 검색</b>, <b>매일 여는 곳은 즐겨찾기</b>,
+      <b>이름을 모르거나 여러 곳을 견줘 볼 때는 링크모음</b>이 편합니다.</p>
+
+      <h3 id="c-groups">주소함의 84개 카테고리, 이렇게 나뉩니다</h3>
+      <p>84개를 한 줄로 늘어놓으면 오히려 찾기 어렵습니다.
+      그래서 성격이 비슷한 것끼리 11개 묶음으로 나눴습니다.
+      아래에서 관심 있는 묶음을 먼저 고른 뒤, 그 안에서 세부 분야를 살펴보세요.
+      숫자는 해당 분야에 정리된 사이트 수입니다.</p>
+      <div class="toclist">
+        <a href="#g1">🏠 생활·행정</a>
+        <a href="#g2">🛒 쇼핑·소비</a>
+        <a href="#g3">🏦 금융·자산</a>
+        <a href="#g4">🍽️ 먹거리·요리</a>
+        <a href="#g5">💊 건강·의료·뷰티</a>
+        <a href="#g6">🎓 학습·커리어</a>
+        <a href="#g7">🎬 문화·여가</a>
+        <a href="#g8">✈️ 여행·이동수단</a>
+        <a href="#g9">🎣 취미·아웃도어</a>
+        <a href="#g10">🛠️ 업무·IT 도구</a>
+        <a href="#g11">👶 가족·반려</a>
+      </div>
+
+      <div class="gcard">
+        <h3 id="g1"><span class="ge">🏠</span>생활·행정
+          <em>11개 분야 · 573개 사이트</em></h3>
+        <p>매일 쓰는 기본기입니다. 검색과 지도, 날씨, 통신사, 관공서 민원처럼 '없으면 곤란한' 서비스들을 모았습니다. 이사·전입신고·각종 증명서 발급처럼 일 년에 몇 번 안 쓰지만 막상 찾으면 헷갈리는 곳도 여기 있습니다.</p>
+        <div class="catbox">
+          <span>포털·검색 <em>54</em></span>
+          <span>지도·교통 <em>67</em></span>
+          <span>날씨·환경 <em>68</em></span>
+          <span>생활편의·서비스 <em>55</em></span>
+          <span>통신·모바일 <em>51</em></span>
+          <span>이메일·메신저 <em>48</em></span>
+          <span>정부·공공 <em>61</em></span>
+          <span>부동산 <em>56</em></span>
+          <span>인테리어·가구·홈데코 <em>43</em></span>
+          <span>가드닝·반려식물 <em>31</em></span>
+          <span>문구·오피스·사무용품 <em>39</em></span>
+        </div>
+      </div>
+
+      <div class="gcard">
+        <h3 id="g2"><span class="ge">🛒</span>쇼핑·소비
+          <em>10개 분야 · 474개 사이트</em></h3>
+        <p>무언가를 살 때 거치는 경로를 한자리에 폈습니다. 종합몰뿐 아니라 가격비교와 핫딜, 중고거래, 해외직구까지 함께 두어 '같은 물건을 어디서 사는 게 나은지' 비교하기 좋게 구성했습니다.</p>
+        <div class="catbox">
+          <span>쇼핑 <em>57</em></span>
+          <span>소셜커머스·핫딜·쿠폰 <em>75</em></span>
+          <span>중고거래·리셀 <em>40</em></span>
+          <span>해외직구·배송대행 <em>35</em></span>
+          <span>패션·뷰티 <em>61</em></span>
+          <span>명품·프리미엄 <em>45</em></span>
+          <span>가전·전자제품 <em>60</em></span>
+          <span>꽃·선물·기프트 <em>42</em></span>
+          <span>안경·콘택트렌즈 <em>35</em></span>
+          <span>인쇄·굿즈·명함제작 <em>24</em></span>
+        </div>
+      </div>
+
+      <div class="gcard">
+        <h3 id="g3"><span class="ge">🏦</span>금융·자산
+          <em>4개 분야 · 227개 사이트</em></h3>
+        <p>은행과 카드, 증권, 보험, 세무처럼 돈이 오가는 서비스입니다. 특히 이 분야는 공식 홈페이지를 정확히 구분하는 일이 중요해서, 이름이 비슷한 사이트에 잘못 들어가는 일을 줄이는 데 도움이 됩니다.</p>
+        <div class="catbox">
+          <span>금융·은행 <em>58</em></span>
+          <span>주식·투자·코인 <em>60</em></span>
+          <span>보험·대출 <em>55</em></span>
+          <span>법률·세무 <em>54</em></span>
+        </div>
+      </div>
+
+      <div class="gcard">
+        <h3 id="g4"><span class="ge">🍽️</span>먹거리·요리
+          <em>5개 분야 · 226개 사이트</em></h3>
+        <p>시켜 먹을 때와 해 먹을 때 모두를 담았습니다. 배달앱부터 레시피, 홈카페와 베이킹, 주류까지 '오늘 뭐 먹지'에서 출발하는 흐름대로 묶었습니다.</p>
+        <div class="catbox">
+          <span>배달·음식 <em>64</em></span>
+          <span>요리·레시피·집밥 <em>44</em></span>
+          <span>커피·원두·홈카페 <em>41</em></span>
+          <span>베이커리·베이킹·디저트 <em>36</em></span>
+          <span>주류·와인·전통주 <em>41</em></span>
+        </div>
+      </div>
+
+      <div class="gcard">
+        <h3 id="g5"><span class="ge">💊</span>건강·의료·뷰티
+          <em>6개 분야 · 264개 사이트</em></h3>
+        <p>병원 예약과 진료 정보, 운동과 식단, 영양제, 피부·미용까지 몸을 돌보는 일 전반을 모았습니다. 마음 건강을 다루는 곳도 함께 두었습니다.</p>
+        <div class="catbox">
+          <span>헬스·병원·의료 <em>63</em></span>
+          <span>다이어트·홈트·운동 <em>44</em></span>
+          <span>영양제·건강기능식품 <em>38</em></span>
+          <span>피부·성형·미용의료 <em>34</em></span>
+          <span>뷰티·헤어·네일 <em>41</em></span>
+          <span>심리·마음건강 <em>44</em></span>
+        </div>
+      </div>
+
+      <div class="gcard">
+        <h3 id="g6"><span class="ge">🎓</span>학습·커리어
+          <em>9개 분야 · 477개 사이트</em></h3>
+        <p>공부하고 일자리를 찾는 과정을 따라 배치했습니다. 입시와 자격증, 어학과 번역, 논문 검색, 채용과 이직, 유학까지 이어집니다. 학생과 취업준비생이 가장 오래 머무는 구간입니다.</p>
+        <div class="catbox">
+          <span>교육·학습 <em>69</em></span>
+          <span>대학·입시·수능 <em>46</em></span>
+          <span>자격증·공무원시험 <em>66</em></span>
+          <span>채용·이직 <em>58</em></span>
+          <span>유학·이민·비자 <em>44</em></span>
+          <span>논문·학술자료 <em>35</em></span>
+          <span>번역·사전·언어 <em>62</em></span>
+          <span>도서·전자책 <em>55</em></span>
+          <span>과학·교양·지식 <em>42</em></span>
+        </div>
+      </div>
+
+      <div class="gcard">
+        <h3 id="g7"><span class="ge">🎬</span>문화·여가
+          <em>13개 분야 · 672개 사이트</em></h3>
+        <p>쉬는 시간에 여는 곳들입니다. OTT와 영화 예매, 공연 티켓, 음악, 웹툰, 게임, 스포츠 중계와 커뮤니티까지. 가장 자주 열어 보게 되는 분야이기도 합니다.</p>
+        <div class="catbox">
+          <span>동영상·OTT <em>51</em></span>
+          <span>영화·평점·예매 <em>43</em></span>
+          <span>공연·전시·티켓 <em>62</em></span>
+          <span>K-POP·연예·팬덤 <em>44</em></span>
+          <span>음악·오디오 <em>56</em></span>
+          <span>웹툰·만화 <em>51</em></span>
+          <span>게임 <em>64</em></span>
+          <span>보드게임·퍼즐 <em>38</em></span>
+          <span>피규어·프라모델·완구 <em>39</em></span>
+          <span>커뮤니티·SNS <em>56</em></span>
+          <span>뉴스·미디어 <em>64</em></span>
+          <span>스포츠 <em>61</em></span>
+          <span>종교·신앙 <em>43</em></span>
+        </div>
+      </div>
+
+      <div class="gcard">
+        <h3 id="g8"><span class="ge">✈️</span>여행·이동수단
+          <em>6개 분야 · 295개 사이트</em></h3>
+        <p>떠날 때와 타고 다닐 때 필요한 곳입니다. 항공권과 숙소, 마일리지, 그리고 자동차·전기차 충전·바이크·자전거까지 이동 수단 전반을 묶었습니다.</p>
+        <div class="catbox">
+          <span>여행·숙박 <em>66</em></span>
+          <span>항공·마일리지·공항 <em>42</em></span>
+          <span>자동차 <em>63</em></span>
+          <span>전기차·충전 <em>42</em></span>
+          <span>오토바이·바이크 <em>42</em></span>
+          <span>자전거·라이딩 <em>40</em></span>
+        </div>
+      </div>
+
+      <div class="gcard">
+        <h3 id="g9"><span class="ge">🎣</span>취미·아웃도어
+          <em>4개 분야 · 182개 사이트</em></h3>
+        <p>밖으로 나가는 취미를 따로 모았습니다. 등산과 백패킹, 낚시, 골프처럼 장비와 정보 사이트를 함께 찾게 되는 분야입니다.</p>
+        <div class="catbox">
+          <span>취미·아웃도어 <em>62</em></span>
+          <span>등산·트레킹·백패킹 <em>41</em></span>
+          <span>낚시·조행 <em>36</em></span>
+          <span>골프 <em>43</em></span>
+        </div>
+      </div>
+
+      <div class="gcard">
+        <h3 id="g10"><span class="ge">🛠️</span>업무·IT 도구
+          <em>13개 분야 · 601개 사이트</em></h3>
+        <p>일할 때 여는 도구들입니다. AI 서비스와 클라우드 협업, 개발 도구, 디자인과 영상 편집, PDF 변환 같은 온라인 유틸리티, 그리고 도메인·보안·마케팅처럼 사이트를 운영하는 사람에게 필요한 곳까지 담았습니다.</p>
+        <div class="catbox">
+          <span>AI·챗봇 <em>54</em></span>
+          <span>클라우드·업무도구 <em>58</em></span>
+          <span>개발·IT·도구 <em>76</em></span>
+          <span>디자인·창작 <em>57</em></span>
+          <span>사진·영상편집 <em>67</em></span>
+          <span>온라인툴·유틸리티 <em>45</em></span>
+          <span>문서·PDF <em>35</em></span>
+          <span>도메인·호스팅 <em>35</em></span>
+          <span>보안·백신 <em>35</em></span>
+          <span>마케팅·SEO <em>35</em></span>
+          <span>창업·스타트업 <em>35</em></span>
+          <span>프리랜서·외주 <em>35</em></span>
+          <span>공공데이터·통계 <em>34</em></span>
+        </div>
+      </div>
+
+      <div class="gcard">
+        <h3 id="g11"><span class="ge">👶</span>가족·반려
+          <em>3개 분야 · 156개 사이트</em></h3>
+        <p>아이를 키우고 반려동물과 지내는 데 필요한 정보, 그리고 결혼 준비까지. 정보량은 많은데 어디서 봐야 할지 막막한 분야라 따로 묶었습니다.</p>
+        <div class="catbox">
+          <span>육아·유아 <em>59</em></span>
+          <span>반려동물 <em>53</em></span>
+          <span>결혼·웨딩 <em>44</em></span>
+        </div>
+      </div>
+
+      <h3 id="c-case">이런 상황에서 특히 편합니다</h3>
+      <ul>
+        <li><b>새 컴퓨터나 새 휴대폰을 개통했을 때</b> — 즐겨찾기가 텅 비어 있어도 주소함 하나만 열면 늘 쓰던 사이트들을 되찾을 수 있습니다.</li>
+        <li><b>이사나 전입신고를 준비할 때</b> — 관공서 민원, 부동산, 통신사 이전, 인터넷 설치처럼 흩어진 절차를 한 화면에서 훑어볼 수 있습니다.</li>
+        <li><b>여행을 계획할 때</b> — 항공권과 숙소, 환전, 날씨, 지도까지 순서대로 이어서 열어 보기 좋습니다.</li>
+        <li><b>취업이나 이직을 준비할 때</b> — 채용 공고, 자격증, 어학, 이력서 도구를 오가며 확인할 수 있습니다.</li>
+        <li><b>무언가를 사기 전에</b> — 종합몰과 가격비교, 중고, 해외직구를 나란히 두고 어디가 나은지 견줘 볼 수 있습니다.</li>
+        <li><b>부모님께 알려 드릴 때</b> — 영문 주소를 받아 적게 하는 대신 한글 분야 이름을 고르게 하면 훨씬 수월합니다.</li>
+      </ul>
+
+      <h3 id="c-change">사이트 주소는 왜 바뀔까요?</h3>
+      <p>즐겨찾기가 어느 날 갑자기 엉뚱한 페이지로 연결된 경험, 있으실 겁니다. 주로 이런 이유입니다.</p>
+      <ul>
+        <li><b>브랜드 변경</b> — 회사명이나 서비스명이 바뀌면 도메인도 함께 바뀝니다.</li>
+        <li><b>인수·합병</b> — 다른 회사로 넘어가면서 기존 주소가 새 회사 사이트로 옮겨 갑니다.</li>
+        <li><b>도메인 정리</b> — 길고 복잡한 주소를 짧은 것으로 옮기는 경우입니다.</li>
+        <li><b>서비스 종료</b> — 문을 닫은 뒤 주소만 남아 다른 용도로 쓰이기도 합니다.</li>
+        <li><b>국가·언어별 분리</b> — 한국 서비스가 별도 주소로 나뉘는 경우입니다.</li>
+      </ul>
+      <p>이럴 때 오래된 즐겨찾기는 신뢰하기 어렵습니다.
+      주소함처럼 계속 손보는 목록을 한 번 거쳐 가면 잘못된 주소로 들어갈 가능성을 줄일 수 있습니다.</p>
+
+      <h3 id="c-safe">링크모음을 안전하게 이용하는 방법</h3>
       <p>주소함은 외부 사이트로 이동하는 <b>길 안내</b> 역할을 합니다.
       실제 서비스는 각 사이트가 운영하므로, 특히 로그인이나 결제가 필요한 곳이라면 아래를 한 번씩 확인해 주세요.</p>
       <ul>
-        <li>주소창에 표시된 <b>도메인 철자</b>가 정확한지 봅니다. 비슷하게 흉내 낸 주소가 있을 수 있습니다.</li>
-        <li>자물쇠 표시(<b>https</b>) 등 보안 연결이 적용되어 있는지 확인합니다.</li>
-        <li>서비스에 견줘 <b>과도한 개인정보</b>를 요구하면 한 번 더 의심합니다.</li>
+        <li>주소창에 표시된 <b>도메인 철자</b>가 정확한지 봅니다. 한두 글자만 바꿔 흉내 낸 주소가 있을 수 있습니다.</li>
+        <li>자물쇠 표시(<b>HTTPS</b>) 등 보안 연결이 적용되어 있는지 확인합니다.</li>
+        <li>서비스 성격에 견줘 <b>과도한 개인정보</b>를 요구하면 한 번 더 의심합니다.</li>
         <li>출처가 분명하지 않은 <b>파일은 내려받지 않습니다</b>.</li>
         <li>결제 전에는 <b>환불 규정과 이용 조건</b>을 읽어 봅니다.</li>
         <li>사이트마다 <b>비밀번호를 다르게</b> 쓰고, 중요한 계정에는 2단계 인증을 켭니다.</li>
+        <li>공용 PC에서는 로그인 후 반드시 <b>로그아웃</b>하고 브라우저 기록을 정리합니다.</li>
       </ul>
+
+      <h3 id="c-word">알아 두면 좋은 용어</h3>
+      <dl class="glossary">
+        <dt>URL</dt><dd>인터넷에서 특정 페이지가 있는 위치를 가리키는 주소 전체를 말합니다. 흔히 말하는 '사이트 주소'가 이것입니다.</dd>
+        <dt>도메인</dt><dd>URL에서 사이트를 구분하는 이름 부분입니다. 이 페이지의 도메인은 <b>주소함.com</b>입니다.</dd>
+        <dt>한글 도메인</dt><dd>영문 대신 한글로 이루어진 도메인입니다. 브라우저 내부에서는 영문 부호로 바뀌어 처리되지만, 이용자는 한글 그대로 입력하면 됩니다.</dd>
+        <dt>HTTPS</dt><dd>주고받는 정보를 암호화해 전달하는 방식입니다. 주소창의 자물쇠 표시로 확인할 수 있습니다.</dd>
+        <dt>즐겨찾기(북마크)</dt><dd>브라우저에 사이트 주소를 저장해 두는 기능입니다. 기기마다 따로 저장된다는 점이 링크모음과 다릅니다.</dd>
+        <dt>리다이렉트</dt><dd>어떤 주소로 들어갔을 때 자동으로 다른 주소로 옮겨 주는 것입니다. 사이트가 주소를 바꿨을 때 주로 쓰입니다.</dd>
+        <dt>링크모음 · 사이트모음</dt><dd>여러 웹사이트로 가는 링크를 주제별로 묶어 놓은 페이지를 가리키는 말입니다. 주소함이 여기에 해당합니다.</dd>
+      </dl>
 
       <div class="tip">
         <p>ℹ️ 주소함은 웹사이트 링크를 분야별로 정리해 안내하는 서비스입니다.
         각 사이트의 운영·회원가입·결제·개인정보 처리 정책은 해당 사이트 기준을 따르며,
         도메인은 운영사 사정에 따라 예고 없이 바뀔 수 있습니다.
         최종 이용 여부와 안전성은 이용자 본인이 확인해 주시기 바랍니다.</p>
+        <p class="upd">최종 업데이트 · <time datetime="2026-08-17">2026년 08월 17일</time></p>
       </div>
     </div>
   </section>
@@ -414,10 +617,11 @@
       <div class="shead">
         <div class="kick">FAQ</div>
         <h2 class="jua">자주 묻는 질문</h2>
+        <p>주소함을 처음 쓰실 때 많이 물어보시는 내용을 모았습니다.</p>
       </div>
         <details>
           <summary>주소함은 어떤 서비스인가요?</summary>
-          <div class="ans"><p>주소함은 인터넷에 흩어져 있는 웹사이트 주소를 분야별로 모아 보여주는 링크모음 서비스입니다. 포털·쇼핑·금융·교육·여행·게임 등 84개 카테고리에 4,100개가 넘는 사이트가 정리되어 있어, 검색어를 바꿔 가며 찾지 않아도 원하는 홈페이지로 바로 이동할 수 있습니다.</p></div>
+          <div class="ans"><p>주소함은 인터넷에 흩어져 있는 웹사이트 주소를 분야별로 모아 보여주는 링크모음 서비스입니다. 포털·쇼핑·금융·교육·여행·게임 등 84개 카테고리에 4,147개가 넘는 사이트가 정리되어 있어, 검색어를 바꿔 가며 찾지 않아도 원하는 홈페이지로 바로 이동할 수 있습니다.</p></div>
         </details>
         <details>
           <summary>이용 요금이 있나요?</summary>
@@ -446,6 +650,38 @@
         <details>
           <summary>주소함에 등록된 사이트를 주소함이 운영하나요?</summary>
           <div class="ans"><p>아닙니다. 주소함은 외부 웹사이트로 이동하는 링크를 안내할 뿐, 각 사이트를 직접 운영하지 않습니다. 회원가입·결제·개인정보 처리 등은 모두 해당 사이트의 정책을 따르므로, 이용 전 운영 주체와 약관을 확인해 주세요.</p></div>
+        </details>
+        <details>
+          <summary>즐겨찾기가 이미 있는데 링크모음이 왜 필요한가요?</summary>
+          <div class="ans"><p>즐겨찾기는 이미 아는 사이트를 다시 찾아갈 때 좋습니다. 반면 링크모음은 아직 모르는 사이트를 발견하거나, 같은 분야의 여러 서비스를 견줘 볼 때 힘을 발휘합니다. 또 즐겨찾기는 기기와 브라우저마다 따로 관리해야 하지만, 주소함은 주소 하나만 기억하면 어느 기기에서든 같은 목록을 볼 수 있습니다.</p></div>
+        </details>
+        <details>
+          <summary>링크모음과 검색엔진은 뭐가 다른가요?</summary>
+          <div class="ans"><p>검색엔진은 '무엇을 찾을지' 이미 알고 있을 때 빠릅니다. 하지만 이름이 정확히 기억나지 않거나 그 분야에 어떤 서비스가 있는지 모를 때는 검색어를 만드는 것부터 막힙니다. 링크모음은 분야를 먼저 고르고 목록을 눈으로 훑는 방식이라, 이름을 몰라도 찾아갈 수 있습니다.</p></div>
+        </details>
+        <details>
+          <summary>사이트 주소는 왜 자꾸 바뀌나요?</summary>
+          <div class="ans"><p>회사 이름이나 브랜드가 바뀌거나, 서비스를 다른 회사가 인수하거나, 더 짧은 도메인으로 옮기는 경우 주소가 바뀝니다. 서비스가 종료되면서 주소만 남는 일도 있습니다. 이럴 때 예전 즐겨찾기는 엉뚱한 곳으로 연결될 수 있어, 정리된 목록을 참고하는 편이 안전합니다.</p></div>
+        </details>
+        <details>
+          <summary>공식 홈페이지인지 어떻게 확인하나요?</summary>
+          <div class="ans"><p>주소창에 표시된 도메인의 철자를 한 글자씩 확인하는 것이 가장 확실합니다. 정식 사이트와 한두 글자만 다른 주소가 존재할 수 있습니다. 자물쇠 표시(HTTPS)가 있는지, 회사 정보와 고객센터 안내가 제대로 적혀 있는지도 함께 살펴보세요.</p></div>
+        </details>
+        <details>
+          <summary>인터넷이 익숙하지 않은 사람도 쓸 수 있나요?</summary>
+          <div class="ans"><p>네. 오히려 그런 분들께 도움이 되도록 만들었습니다. 영문 주소를 직접 입력할 필요 없이, 한글로 된 분야 이름을 고르고 목록에서 누르기만 하면 됩니다. 글씨가 작게 느껴지시면 브라우저 확대 기능(PC는 Ctrl 키와 + 키)을 함께 쓰시면 편합니다.</p></div>
+        </details>
+        <details>
+          <summary>휴대폰 홈 화면에 바로가기를 만들 수 있나요?</summary>
+          <div class="ans"><p>가능합니다. 안드로이드 크롬에서는 우측 상단 메뉴에서 '홈 화면에 추가'를, 아이폰 사파리에서는 공유 버튼을 누른 뒤 '홈 화면에 추가'를 선택하면 됩니다. 앱처럼 아이콘이 생겨 한 번에 열 수 있습니다.</p></div>
+        </details>
+        <details>
+          <summary>광고나 팝업이 뜨나요?</summary>
+          <div class="ans"><p>주소함은 사이트 목록을 보여주는 데 집중합니다. 다만 링크를 눌러 이동한 외부 사이트에서 나타나는 광고는 해당 사이트의 운영 방식에 따른 것이므로 주소함이 관여하지 않습니다.</p></div>
+        </details>
+        <details>
+          <summary>어떤 기준으로 사이트를 모으나요?</summary>
+          <div class="ans"><p>실제로 많이 찾는 서비스인지, 분야를 대표할 만한지, 현재 정상적으로 운영되고 있는지를 봅니다. 한 분야에 한 곳만 넣기보다 여러 곳을 나란히 두어 비교할 수 있게 하는 것을 원칙으로 합니다.</p></div>
         </details>
     </div>
   </section>
@@ -479,6 +715,7 @@
   </div>
 </footer>
 
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -486,7 +723,8 @@
   "name": "주소함",
   "alternateName": [
     "JUSOHAM",
-    "주소함 링크모음"
+    "주소함 링크모음",
+    "주소모음"
   ],
   "url": "https://xn--9l4b19kv6k.com/",
   "inLanguage": "ko-KR",
@@ -505,6 +743,63 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": "https://xn--9l4b19kv6k.com/",
+  "name": "주소함 | 필요한 사이트 주소를 한곳에",
+  "inLanguage": "ko-KR",
+  "dateModified": "2026-08-17",
+  "description": "링크모음의 개념부터 84개 카테고리 전체 안내, 상황별 활용법, 안전 이용 수칙과 용어 정리까지 담은 주소함 이용 안내.",
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "생활·행정"
+    },
+    {
+      "@type": "Thing",
+      "name": "쇼핑·소비"
+    },
+    {
+      "@type": "Thing",
+      "name": "금융·자산"
+    },
+    {
+      "@type": "Thing",
+      "name": "먹거리·요리"
+    },
+    {
+      "@type": "Thing",
+      "name": "건강·의료·뷰티"
+    },
+    {
+      "@type": "Thing",
+      "name": "학습·커리어"
+    },
+    {
+      "@type": "Thing",
+      "name": "문화·여가"
+    },
+    {
+      "@type": "Thing",
+      "name": "여행·이동수단"
+    },
+    {
+      "@type": "Thing",
+      "name": "취미·아웃도어"
+    },
+    {
+      "@type": "Thing",
+      "name": "업무·IT 도구"
+    },
+    {
+      "@type": "Thing",
+      "name": "가족·반려"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
@@ -512,7 +807,7 @@
       "name": "주소함은 어떤 서비스인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "주소함은 인터넷에 흩어져 있는 웹사이트 주소를 분야별로 모아 보여주는 링크모음 서비스입니다. 포털·쇼핑·금융·교육·여행·게임 등 84개 카테고리에 4,100개가 넘는 사이트가 정리되어 있어, 검색어를 바꿔 가며 찾지 않아도 원하는 홈페이지로 바로 이동할 수 있습니다."
+        "text": "주소함은 인터넷에 흩어져 있는 웹사이트 주소를 분야별로 모아 보여주는 링크모음 서비스입니다. 포털·쇼핑·금융·교육·여행·게임 등 84개 카테고리에 4,147개가 넘는 사이트가 정리되어 있어, 검색어를 바꿔 가며 찾지 않아도 원하는 홈페이지로 바로 이동할 수 있습니다."
       }
     },
     {
@@ -569,6 +864,70 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "아닙니다. 주소함은 외부 웹사이트로 이동하는 링크를 안내할 뿐, 각 사이트를 직접 운영하지 않습니다. 회원가입·결제·개인정보 처리 등은 모두 해당 사이트의 정책을 따르므로, 이용 전 운영 주체와 약관을 확인해 주세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "즐겨찾기가 이미 있는데 링크모음이 왜 필요한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "즐겨찾기는 이미 아는 사이트를 다시 찾아갈 때 좋습니다. 반면 링크모음은 아직 모르는 사이트를 발견하거나, 같은 분야의 여러 서비스를 견줘 볼 때 힘을 발휘합니다. 또 즐겨찾기는 기기와 브라우저마다 따로 관리해야 하지만, 주소함은 주소 하나만 기억하면 어느 기기에서든 같은 목록을 볼 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "링크모음과 검색엔진은 뭐가 다른가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "검색엔진은 '무엇을 찾을지' 이미 알고 있을 때 빠릅니다. 하지만 이름이 정확히 기억나지 않거나 그 분야에 어떤 서비스가 있는지 모를 때는 검색어를 만드는 것부터 막힙니다. 링크모음은 분야를 먼저 고르고 목록을 눈으로 훑는 방식이라, 이름을 몰라도 찾아갈 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "사이트 주소는 왜 자꾸 바뀌나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "회사 이름이나 브랜드가 바뀌거나, 서비스를 다른 회사가 인수하거나, 더 짧은 도메인으로 옮기는 경우 주소가 바뀝니다. 서비스가 종료되면서 주소만 남는 일도 있습니다. 이럴 때 예전 즐겨찾기는 엉뚱한 곳으로 연결될 수 있어, 정리된 목록을 참고하는 편이 안전합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "공식 홈페이지인지 어떻게 확인하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "주소창에 표시된 도메인의 철자를 한 글자씩 확인하는 것이 가장 확실합니다. 정식 사이트와 한두 글자만 다른 주소가 존재할 수 있습니다. 자물쇠 표시(HTTPS)가 있는지, 회사 정보와 고객센터 안내가 제대로 적혀 있는지도 함께 살펴보세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "인터넷이 익숙하지 않은 사람도 쓸 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네. 오히려 그런 분들께 도움이 되도록 만들었습니다. 영문 주소를 직접 입력할 필요 없이, 한글로 된 분야 이름을 고르고 목록에서 누르기만 하면 됩니다. 글씨가 작게 느껴지시면 브라우저 확대 기능(PC는 Ctrl 키와 + 키)을 함께 쓰시면 편합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "휴대폰 홈 화면에 바로가기를 만들 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가능합니다. 안드로이드 크롬에서는 우측 상단 메뉴에서 '홈 화면에 추가'를, 아이폰 사파리에서는 공유 버튼을 누른 뒤 '홈 화면에 추가'를 선택하면 됩니다. 앱처럼 아이콘이 생겨 한 번에 열 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "광고나 팝업이 뜨나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "주소함은 사이트 목록을 보여주는 데 집중합니다. 다만 링크를 눌러 이동한 외부 사이트에서 나타나는 광고는 해당 사이트의 운영 방식에 따른 것이므로 주소함이 관여하지 않습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "어떤 기준으로 사이트를 모으나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "실제로 많이 찾는 서비스인지, 분야를 대표할 만한지, 현재 정상적으로 운영되고 있는지를 봅니다. 한 분야에 한 곳만 넣기보다 여러 곳을 나란히 두어 비교할 수 있게 하는 것을 원칙으로 합니다."
       }
     }
   ]
@@ -1000,6 +1359,34 @@
       "@type": "ListItem",
       "position": 84,
       "name": "해외직구·배송대행"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "주소함에서 원하는 사이트를 찾는 방법",
+  "totalTime": "PT10S",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "분야 고르기",
+      "text": "찾는 사이트가 어떤 분야인지 먼저 정합니다. 쇼핑, 금융, 여행처럼 큰 갈래부터 좁혀 갑니다."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "목록에서 확인하기",
+      "text": "선택한 카테고리에 정리된 사이트 목록을 훑어보고 필요한 서비스를 찾습니다."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "도메인 확인 후 접속",
+      "text": "이동 전 사이트 이름과 주소창의 도메인 철자를 확인한 뒤 접속합니다."
     }
   ]
 }
