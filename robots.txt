@@ -1,0 +1,6 @@
+# 주소함 랜딩페이지 robots.txt
+# 검색엔진에게: 모든 페이지 수집 허용
+User-agent: *
+Allow: /
+
+Sitemap: https://xn--9l4b19kv6k.com/sitemap.xml
