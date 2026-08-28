@@ -1399,5 +1399,17 @@
 }
 </script>
 
+
+<script>
+(function () {
+  var API  = "https://mxdvimlijtmkzxdyxknb.supabase.co/functions/v1/track";
+  var SITE = "jusohamland";
+  var id = localStorage.getItem("_vid");
+  if (!id) { id = Math.random().toString(36).slice(2) + Date.now().toString(36); localStorage.setItem("_vid", id); }
+  function ping(t){ try{ fetch(API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({site:SITE,id:id,uid:window.__vuid||"",type:t}),keepalive:true}).catch(function(){}); }catch(e){} }
+  if(!sessionStorage.getItem("_visited")){ sessionStorage.setItem("_visited","1"); ping("visit"); } else { ping("heartbeat"); }
+  setInterval(function(){ ping("heartbeat"); },30000);
+})();
+</script>
 </body>
 </html>
