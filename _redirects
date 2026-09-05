@@ -3,3 +3,6 @@
 /landing.html   /   301
 /landing        /   301
 /index          /   301
+# netlify.app 호스트로 들어오면 정식 도메인으로 301 (중복 콘텐츠 방지, 2026-09-05)
+https://jusoham-landing.netlify.app/*  https://xn--9l4b19kv6k.com/:splat  301!
+http://jusoham-landing.netlify.app/*   https://xn--9l4b19kv6k.com/:splat  301!
