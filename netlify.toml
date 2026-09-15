@@ -1,2 +1,7 @@
+# 배포 전 SEO 주소 형식 검사 (2026-09-15)
+# canonical·og:url·JSON-LD·sitemap·링크의 주소 형식(.html 유무)이 어긋나면 빌드가 실패하고,
+# 라이브는 이전 배포 그대로 남는다. 주소로.com 이 이 불일치로 구글 색인 32/100 에 머물렀다.
+# 실패하면 Netlify 배포 로그에 어떤 페이지가 왜 틀렸는지 나온다 — 고쳐서 다시 push.
 [build]
   publish = "."
+  command = "python3 _guard/seo_guard.py . https://xn--9l4b19kv6k.com"
