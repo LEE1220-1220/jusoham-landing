@@ -13,13 +13,14 @@
   python seo_guard.py --live <https://도메인> [<https://도메인> ...]   라이브 사이트(사이트맵 전 URL 을 받아서 확인)
 
 검사 항목 (오류 = 배포 중단)
-  · 페이지: canonical 없음 · canonical 에 .html · canonical 호스트가 다름 · canonical 이 자기 주소가 아님
+  · 페이지: JSON-LD 파싱 실패(구글이 구조화 데이터를 못 읽는다) · canonical 없음 · canonical 에 .html · canonical 호스트가 다름 · canonical 이 자기 주소가 아님
             · og:url 이 canonical 과 다름 · 같은 도메인의 .html 절대주소(JSON-LD·hreflang 포함)
   · 사이트맵: .html 주소 · 중복 · 다른 호스트 · 리다이렉트/비200(라이브) · 파일의 실제 주소와 형식이 다름
   · 링크: 페이지 안 링크가 사이트맵과 .html 유무만 다른 주소를 가리킴
   (경고 = 참고) 끝 슬래시만 다른 링크(/app ↔ /app/), 사이트맵에 빠진 페이지, 상대 .html 링크
 """
 import io
+import json
 import os
 import re
 import sys
@@ -42,6 +43,7 @@ RE_TAG_OGURL = re.compile(r"<meta\b[^>]*\bproperty=[\"']og:url[\"'][^>]*>", re.I
 RE_NOINDEX = re.compile(r"<meta\b[^>]*\bname=[\"']robots[\"'][^>]*noindex", re.I)
 RE_HREF = re.compile(r"<a\b[^>]*?\bhref=[\"']([^\"']+)[\"']", re.I)
 RE_LOC = re.compile(r"<loc>\s*([^<\s]+)\s*</loc>")
+RE_LD = re.compile(r"<script[^>]*type=[\"']application/ld\+json[\"'][^>]*>(.*?)</script>", re.S | re.I)
 
 
 class Result:
@@ -110,6 +112,13 @@ def check_page(r, html, url, host, local):
     og = attr(t.group(0), "content") if t else None
     if og and canon and og != canon:
         r.e("og:url 이 canonical 과 다름", "%s: og %s / canonical %s" % (path, og, canon))
+    for b in RE_LD.findall(html):
+        try:
+            json.loads(b)
+        except Exception as ex:
+            r.e("JSON-LD 파싱 실패(구조화 데이터를 구글이 못 읽는다)",
+                "%s: %s | %s" % (path, ex, " ".join(b.split())[:120]))
+            break
     bad = [u for u in re.findall(r"https?://%s(/[^\"'\s<>()\\]*?\.html)(?=[\"'\s<>?#)\\]|$)"
                                  % re.escape(host), html, re.I)
            if not VERIFY.search(u)]
