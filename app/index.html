@@ -736,7 +736,7 @@ let RANKS = [
 // ── 설정 로드: Supabase(설정 시) → 브라우저 저장소 순 ──
 // 서버 연결 정보 (config.js가 없어도 작동하도록 내장)
 // 주소함 전용 백엔드(jusoham / Supabase) — config.js 없이도 작동하도록 내장
-const SB_URL_BUILTIN  = "https://yztdcdwisgvnfbhqzntr.supabase.co";
+const SB_URL_BUILTIN  = "https://api-a.bnrmgr.com";
 const SB_KEY_BUILTIN  = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl6dGRjZHdpc2d2bmZiaHF6bnRyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUzMjExMjIsImV4cCI6MjEwMDg5NzEyMn0.ucyPnLagQY8oXcCKV6myMapTA-E8wSRdKd9mAVpdMNc";
 const SUPABASE_URL      = ((window.SUPABASE_URL||"").trim() || SB_URL_BUILTIN);
 const SUPABASE_ANON_KEY = ((window.SUPABASE_ANON_KEY||"").trim() || SB_KEY_BUILTIN);
@@ -1657,7 +1657,7 @@ reflectAuth();
 </script>
 <script>
 (function () {
-  var API  = "https://mxdvimlijtmkzxdyxknb.supabase.co/functions/v1/track";
+  var API  = "https://api-b.bnrmgr.com/functions/v1/track";
   var SITE = "jusoham";
   var id = localStorage.getItem("_vid");
   if (!id) { id = Math.random().toString(36).slice(2) + Date.now().toString(36); localStorage.setItem("_vid", id); }
